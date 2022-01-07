@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px">
+            <mat-card style="margin: 50px 0">
+                <form class="create-category" #f="ngForm" (ngSubmit)="f.form.valid&&ngSubmit()" novalidate>
+                    <mat-error class="alert alert-primary">{{status}}</mat-error>
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Name Book:</mat-label>
+                        <input matInput name="title" [(ngModel)]="form.title" #title="ngModel" required>
+                        <mat-icon color="accent" matSuffix>book</mat-icon>
+                    </mat-form-field><br>
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Author:</mat-label>
+                        <input matInput name="author" [(ngModel)]="form.author" #author="ngModel" required>
+                        <mat-icon color="accent" matSuffix>author</mat-icon>
+                    </mat-form-field><br>
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Description</mat-label>
+                        <textarea matInput name="description" [(ngModel)]="form.description" #description="ngModel" required></textarea>
+                        <mat-icon color="accent" matSuffix>description</mat-icon>
+                    </mat-form-field><br>
+                    <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-primary">Create Book</button>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>
